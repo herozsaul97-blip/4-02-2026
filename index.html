@@ -1,214 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Para Sharmelyn 💜</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Sharmelyn</title>
 
-<style>
-*{
-  box-sizing:border-box;
-  font-family:'Georgia', serif;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Georgia', serif;
+    }
 
-body{
-  margin:0;
-  min-height:100vh;
-  background:linear-gradient(135deg,#6a11cb,#5fc3e4);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  overflow:hidden;
-}
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #7b2ff7, #5ce1e6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      overflow: hidden;
+    }
 
-.screen{
-  position:absolute;
-  width:100%;
-  height:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  transition:opacity 1s ease;
-}
+    .pantalla {
+      text-align: center;
+      padding: 20px;
+      max-width: 400px;
+    }
 
-.hidden{
-  opacity:0;
-  pointer-events:none;
-}
+    h1 {
+      font-size: 2.3em;
+      margin-bottom: 20px;
+    }
 
-/* ---------- PANTALLA 1 ---------- */
-.container{
-  background:rgba(0,0,0,.35);
-  border-radius:20px;
-  padding:30px;
-  max-width:420px;
-  width:90%;
-  text-align:center;
-  box-shadow:0 15px 40px rgba(0,0,0,.4);
-}
+    button {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      padding: 15px 35px;
+      border-radius: 30px;
+      font-size: 1.1em;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-h1{
-  font-size:2.5rem;
-}
+    button:hover {
+      background: rgba(255,255,255,0.35);
+    }
 
-.subtitle{
-  opacity:.9;
-  margin-bottom:20px;
-}
+    .segunda {
+      display: none;
+      background: radial-gradient(circle at top, #1a1a2e, #000);
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #e6d9ff;
+    }
 
-.image-box{
-  background:black;
-  padding:10px;
-  border-radius:20px;
-  margin-bottom:20px;
-}
+    .mensaje {
+      padding: 60px 20px 20px;
+      text-align: center;
+    }
 
-.image-box img{
-  width:100%;
-  border-radius:15px;
-}
+    .mensaje p {
+      font-size: 1.4em;
+      margin-bottom: 15px;
+    }
 
-.text-box{
-  background:rgba(0,0,0,.5);
-  padding:15px;
-  border-radius:15px;
-  margin-bottom:20px;
-}
+    .mensaje span {
+      color: #c084fc;
+      font-size: 1.2em;
+    }
 
-.btn{
-  background:linear-gradient(135deg,#ff6ec7,#b983ff);
-  border:none;
-  color:white;
-  font-size:1.1rem;
-  padding:15px 30px;
-  border-radius:30px;
-  cursor:pointer;
-}
+    .flores {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 60px;
+    }
 
-/* ---------- PANTALLA 2 ---------- */
-.second{
-  background:radial-gradient(circle at top,#1b0f2b,#000);
-  text-align:center;
-  padding:20px;
-}
+    .flor {
+      position: relative;
+      width: 80px;
+      height: 160px;
+    }
 
-.quote{
-  font-size:1.5rem;
-  line-height:1.6;
-  margin-bottom:10px;
-}
+    .petalos {
+      width: 80px;
+      height: 80px;
+      background: #c084fc;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
 
-.subquote{
-  color:#cfa8ff;
-  font-size:1.2rem;
-}
+    .centro {
+      width: 28px;
+      height: 28px;
+      background: #facc15;
+      border-radius: 50%;
+      position: absolute;
+      top: 26px;
+      left: 26px;
+      z-index: 2;
+    }
 
-/* flores */
-.flowers{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  margin-top:50px;
-}
+    .tallo {
+      width: 10px;
+      height: 90px;
+      background: #22c55e;
+      margin: 80px auto 0;
+      border-radius: 10px;
+    }
 
-.flower{
-  animation:grow 2s ease forwards;
-}
+    .hamster {
+      margin-top: 30px;
+    }
 
-@keyframes grow{
-  from{transform:scale(0);}
-  to{transform:scale(1);}
-}
-
-.stem{
-  width:10px;
-  height:120px;
-  background:#3cb371;
-  margin:auto;
-}
-
-.petals{
-  width:80px;
-  height:80px;
-  background:#c77dff;
-  border-radius:50%;
-  position:relative;
-  margin:auto;
-}
-
-.center{
-  width:25px;
-  height:25px;
-  background:gold;
-  border-radius:50%;
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-}
-</style>
+    .hamster img {
+      width: 150px;
+      border-radius: 20px;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- AUDIO -->
-<audio id="music" src="audio.mp3"></audio>
-
-<!-- PANTALLA 1 -->
-<div class="screen" id="screen1">
-  <div class="container">
-    <h1>Para Sharmelyn</h1>
-    <div class="subtitle">con todo mi arrepentimiento</div>
-
-    <div class="image-box">
-      <img src="hamster.jpg">
-    </div>
-
-    <div class="text-box">
-      💜 Presiona el botón para ver algo especial 💜 <br><br>
-      🌸 Una flor crecerá para ti 🌸
-    </div>
-
-    <button class="btn" onclick="start()">Comenzar</button>
+  <!-- PANTALLA INICIAL -->
+  <div class="pantalla" id="inicio">
+    <h1>Para Sharmelyn 💜</h1>
+    <button onclick="comenzar()">Comenzar</button>
   </div>
-</div>
 
-<!-- PANTALLA 2 -->
-<div class="screen hidden second" id="screen2">
-  <div>
-    <div class="quote">
-      "Porque tus sentimientos importan más que mis palabras."
-    </div>
-    <div class="subquote">
-      "Lo siento. De verdad."
+  <!-- SEGUNDA PANTALLA -->
+  <div class="segunda" id="segunda">
+    <div class="mensaje">
+      <p>
+        “Porque tus sentimientos importan más que mis palabras,  
+        y lamento haberte herido.”
+      </p>
+      <span>“Lo siento. De verdad.”</span>
     </div>
 
-    <div class="flowers">
-      <div class="flower">
-        <div class="petals"><div class="center"></div></div>
-        <div class="stem"></div>
+    <div class="flores">
+      <div class="flor">
+        <div class="petalos"></div>
+        <div class="centro"></div>
+        <div class="tallo"></div>
       </div>
-      <div class="flower">
-        <div class="petals"><div class="center"></div></div>
-        <div class="stem"></div>
+
+      <div class="flor">
+        <div class="petalos"></div>
+        <div class="centro"></div>
+        <div class="tallo"></div>
       </div>
-      <div class="flower">
-        <div class="petals"><div class="center"></div></div>
-        <div class="stem"></div>
+
+      <div class="flor">
+        <div class="petalos"></div>
+        <div class="centro"></div>
+        <div class="tallo"></div>
       </div>
+    </div>
+
+    <div class="hamster">
+      <img src="hamster.jpg" alt="Hamster triste">
     </div>
   </div>
-</div>
 
-<script>
-function start(){
-  document.getElementById("screen1").classList.add("hidden");
-  document.getElementById("screen2").classList.remove("hidden");
-  document.getElementById("music").play();
-}
-</script>
+  <!-- AUDIO -->
+  <audio id="musica" src="audio.mp3"></audio>
+
+  <script>
+    function comenzar() {
+      document.getElementById("inicio").style.display = "none";
+      document.getElementById("segunda").style.display = "block";
+
+      const audio = document.getElementById("musica");
+      audio.volume = 0.8;
+      audio.play();
+    }
+  </script>
 
 </body>
 </html>
-
