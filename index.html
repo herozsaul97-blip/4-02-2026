@@ -46,6 +46,13 @@ button{
   cursor:pointer;
 }
 
+/* Instrucciones */
+.instructions{
+  margin-top:20px;
+  font-size:0.9em;
+  opacity:0.85;
+}
+
 /* Segunda pantalla */
 .second{
   background:radial-gradient(circle at top,#1a1235,#000);
@@ -67,12 +74,24 @@ button{
   font-size:1.15em;
 }
 
-/* 🌸 FLORES (FIX MÓVIL) */
+/* 🐹 Hamster */
+.hamster{
+  margin-top:25px;
+}
+
+.hamster img{
+  width:140px;
+  max-width:60vw;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* 🌸 Flores */
 .flores{
   display:flex;
   justify-content:center;
   gap:32px;
-  margin-top:50px;
+  margin-top:45px;
 }
 
 .flor{
@@ -84,13 +103,12 @@ button{
 .petalo{
   position:absolute;
   width:36px;
-  aspect-ratio:1/1;       /* 🔑 evita ovalado */
+  aspect-ratio:1/1;
   background:#c084fc;
   border-radius:50%;
-  transform:translateZ(0); /* 🔑 fix móvil */
+  transform:translateZ(0);
 }
 
-/* posiciones */
 .p1{top:0;left:27px;}
 .p2{top:22px;left:0;}
 .p3{top:22px;right:0;}
@@ -106,7 +124,6 @@ button{
   background:#facc15;
   border-radius:50%;
   z-index:2;
-  transform:translateZ(0);
 }
 
 .tallo{
@@ -132,10 +149,14 @@ button{
 <div class="screen" id="screen1">
   <h1>Para Sharmelyn 💜</h1>
   <button id="btn">Comenzar</button>
+  <div class="instructions">
+    Toca el botón y sube el volumen 🔊
+  </div>
 </div>
 
 <!-- PANTALLA 2 -->
 <div class="screen hidden second" id="screen2">
+
   <div class="mensaje">
     <p>
       “Porque tus sentimientos importan más que mis palabras,
@@ -144,6 +165,12 @@ button{
     <span>Lo siento. De verdad.</span>
   </div>
 
+  <!-- Hamster -->
+  <div class="hamster">
+    <img src="hamster.jpg" alt="Hamster">
+  </div>
+
+  <!-- Flores -->
   <div class="flores">
     <div class="flor">
       <div class="petalo p1"></div>
@@ -175,6 +202,7 @@ button{
       <div class="tallo"></div>
     </div>
   </div>
+
 </div>
 
 <script>
@@ -184,14 +212,12 @@ const music = document.getElementById("music");
 function startExperience(){
   music.muted = false;
   music.volume = 1;
-
   music.play().catch(()=>{});
 
   document.getElementById("screen1").classList.add("hidden");
   document.getElementById("screen2").classList.remove("hidden");
 }
 
-/* 🔑 soporte móvil real */
 btn.addEventListener("touchstart", startExperience, { once:true });
 btn.addEventListener("click", startExperience, { once:true });
 </script>
