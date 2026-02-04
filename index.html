@@ -1,189 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Para Sharmelyn</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Sharmelyn 💜</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Georgia', serif;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  font-family:'Georgia', serif;
+}
 
-    body {
-      height: 100vh;
-      background: linear-gradient(135deg, #7b2ff7, #5ce1e6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      overflow: hidden;
-    }
+body{
+  margin:0;
+  height:100vh;
+  background:linear-gradient(135deg,#7b2ff7,#5ce1e6);
+  color:white;
+  overflow:hidden;
+}
 
-    .pantalla {
-      text-align: center;
-      padding: 20px;
-      max-width: 400px;
-    }
+/* Pantallas */
+.screen{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
 
-    h1 {
-      font-size: 2.3em;
-      margin-bottom: 20px;
-    }
+.hidden{
+  display:none;
+}
 
-    button {
-      background: rgba(255,255,255,0.2);
-      border: none;
-      padding: 15px 35px;
-      border-radius: 30px;
-      font-size: 1.1em;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+/* Botón */
+button{
+  background:rgba(255,255,255,0.25);
+  border:none;
+  padding:15px 35px;
+  border-radius:30px;
+  font-size:1.1em;
+  color:white;
+  cursor:pointer;
+}
 
-    button:hover {
-      background: rgba(255,255,255,0.35);
-    }
+/* Segunda pantalla */
+.second{
+  background:radial-gradient(circle at top,#1a1235,#000);
+}
 
-    .segunda {
-      display: none;
-      background: radial-gradient(circle at top, #1a1a2e, #000);
-      height: 100vh;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: #e6d9ff;
-    }
+/* Texto */
+.mensaje{
+  margin-top:40px;
+}
 
-    .mensaje {
-      padding: 60px 20px 20px;
-      text-align: center;
-    }
+.mensaje p{
+  font-size:1.4em;
+  max-width:600px;
+  line-height:1.5;
+}
 
-    .mensaje p {
-      font-size: 1.4em;
-      margin-bottom: 15px;
-    }
+.mensaje span{
+  color:#c084fc;
+  font-size:1.2em;
+}
 
-    .mensaje span {
-      color: #c084fc;
-      font-size: 1.2em;
-    }
+/* Flores */
+.flores{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:60px;
+}
 
-    .flores {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 60px;
-    }
+.flor{
+  position:relative;
+  width:100px;
+  height:200px;
+}
 
-    .flor {
-      position: relative;
-      width: 80px;
-      height: 160px;
-    }
+.petalo{
+  position:absolute;
+  width:40px;
+  height:40px;
+  background:#c084fc;
+  border-radius:50%;
+}
 
-    .petalos {
-      width: 80px;
-      height: 80px;
-      background: #c084fc;
-      border-radius: 50%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
+.p1{top:0;left:30px;}
+.p2{top:20px;left:0;}
+.p3{top:20px;right:0;}
+.p4{top:45px;left:20px;}
+.p5{top:45px;right:20px;}
 
-    .centro {
-      width: 28px;
-      height: 28px;
-      background: #facc15;
-      border-radius: 50%;
-      position: absolute;
-      top: 26px;
-      left: 26px;
-      z-index: 2;
-    }
+.centro{
+  position:absolute;
+  top:32px;
+  left:32px;
+  width:36px;
+  height:36px;
+  background:#facc15;
+  border-radius:50%;
+  z-index:2;
+}
 
-    .tallo {
-      width: 10px;
-      height: 90px;
-      background: #22c55e;
-      margin: 80px auto 0;
-      border-radius: 10px;
-    }
-
-    .hamster {
-      margin-top: 30px;
-    }
-
-    .hamster img {
-      width: 150px;
-      border-radius: 20px;
-    }
-  </style>
+.tallo{
+  position:absolute;
+  top:80px;
+  left:45px;
+  width:10px;
+  height:100px;
+  background:#22c55e;
+  border-radius:10px;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- PANTALLA INICIAL -->
-  <div class="pantalla" id="inicio">
-    <h1>Para Sharmelyn 💜</h1>
-    <button onclick="comenzar()">Comenzar</button>
+<!-- AUDIO -->
+<audio id="music" preload="auto" playsinline>
+  <source src="audio.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PANTALLA 1 -->
+<div class="screen" id="screen1">
+  <h1>Para Sharmelyn 💜</h1>
+  <button onclick="start()">Comenzar</button>
+</div>
+
+<!-- PANTALLA 2 -->
+<div class="screen hidden second" id="screen2">
+  <div class="mensaje">
+    <p>
+      “Porque tus sentimientos importan más que mis palabras,
+      y lamento haberte herido.”
+    </p>
+    <span>Lo siento. De verdad.</span>
   </div>
 
-  <!-- SEGUNDA PANTALLA -->
-  <div class="segunda" id="segunda">
-    <div class="mensaje">
-      <p>
-        “Porque tus sentimientos importan más que mis palabras,  
-        y lamento haberte herido.”
-      </p>
-      <span>“Lo siento. De verdad.”</span>
+  <div class="flores">
+    <div class="flor">
+      <div class="petalo p1"></div>
+      <div class="petalo p2"></div>
+      <div class="petalo p3"></div>
+      <div class="petalo p4"></div>
+      <div class="petalo p5"></div>
+      <div class="centro"></div>
+      <div class="tallo"></div>
     </div>
 
-    <div class="flores">
-      <div class="flor">
-        <div class="petalos"></div>
-        <div class="centro"></div>
-        <div class="tallo"></div>
-      </div>
-
-      <div class="flor">
-        <div class="petalos"></div>
-        <div class="centro"></div>
-        <div class="tallo"></div>
-      </div>
-
-      <div class="flor">
-        <div class="petalos"></div>
-        <div class="centro"></div>
-        <div class="tallo"></div>
-      </div>
+    <div class="flor">
+      <div class="petalo p1"></div>
+      <div class="petalo p2"></div>
+      <div class="petalo p3"></div>
+      <div class="petalo p4"></div>
+      <div class="petalo p5"></div>
+      <div class="centro"></div>
+      <div class="tallo"></div>
     </div>
 
-    <div class="hamster">
-      <img src="hamster.jpg" alt="Hamster triste">
+    <div class="flor">
+      <div class="petalo p1"></div>
+      <div class="petalo p2"></div>
+      <div class="petalo p3"></div>
+      <div class="petalo p4"></div>
+      <div class="petalo p5"></div>
+      <div class="centro"></div>
+      <div class="tallo"></div>
     </div>
   </div>
+</div>
 
-  <!-- AUDIO -->
-  <audio id="musica" src="audio.mp3"></audio>
+<script>
+function start(){
+  const music = document.getElementById("music");
+  music.volume = 1;
+  music.play().catch(()=>{});
 
-  <script>
-    function comenzar() {
-      document.getElementById("inicio").style.display = "none";
-      document.getElementById("segunda").style.display = "block";
-
-      const audio = document.getElementById("musica");
-      audio.volume = 0.8;
-      audio.play();
-    }
-  </script>
+  document.getElementById("screen1").classList.add("hidden");
+  document.getElementById("screen2").classList.remove("hidden");
+}
+</script>
 
 </body>
 </html>
