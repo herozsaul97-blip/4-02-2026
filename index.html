@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Para Sharmelyn 💜</title>
 
 <style>
@@ -53,65 +53,68 @@ button{
 
 /* Texto */
 .mensaje{
-  margin-top:40px;
+  margin-top:30px;
 }
 
 .mensaje p{
-  font-size:1.4em;
+  font-size:1.35em;
   max-width:600px;
   line-height:1.5;
 }
 
 .mensaje span{
   color:#c084fc;
-  font-size:1.2em;
+  font-size:1.15em;
 }
 
-/* Flores */
+/* 🌸 FLORES (FIX MÓVIL) */
 .flores{
   display:flex;
   justify-content:center;
-  gap:40px;
-  margin-top:60px;
+  gap:32px;
+  margin-top:50px;
 }
 
 .flor{
   position:relative;
-  width:100px;
-  height:200px;
+  width:90px;
+  height:180px;
 }
 
 .petalo{
   position:absolute;
-  width:40px;
-  height:40px;
+  width:36px;
+  aspect-ratio:1/1;       /* 🔑 evita ovalado */
   background:#c084fc;
   border-radius:50%;
+  transform:translateZ(0); /* 🔑 fix móvil */
 }
 
-.p1{top:0;left:30px;}
-.p2{top:20px;left:0;}
-.p3{top:20px;right:0;}
-.p4{top:45px;left:20px;}
-.p5{top:45px;right:20px;}
+/* posiciones */
+.p1{top:0;left:27px;}
+.p2{top:22px;left:0;}
+.p3{top:22px;right:0;}
+.p4{top:48px;left:18px;}
+.p5{top:48px;right:18px;}
 
 .centro{
   position:absolute;
-  top:32px;
-  left:32px;
-  width:36px;
-  height:36px;
+  top:34px;
+  left:34px;
+  width:30px;
+  aspect-ratio:1/1;
   background:#facc15;
   border-radius:50%;
   z-index:2;
+  transform:translateZ(0);
 }
 
 .tallo{
   position:absolute;
   top:80px;
-  left:45px;
-  width:10px;
-  height:100px;
+  left:40px;
+  width:8px;
+  height:95px;
   background:#22c55e;
   border-radius:10px;
 }
@@ -128,7 +131,7 @@ button{
 <!-- PANTALLA 1 -->
 <div class="screen" id="screen1">
   <h1>Para Sharmelyn 💜</h1>
-  <button onclick="start()">Comenzar</button>
+  <button id="btn">Comenzar</button>
 </div>
 
 <!-- PANTALLA 2 -->
@@ -175,14 +178,22 @@ button{
 </div>
 
 <script>
-function start(){
-  const music = document.getElementById("music");
+const btn = document.getElementById("btn");
+const music = document.getElementById("music");
+
+function startExperience(){
+  music.muted = false;
   music.volume = 1;
+
   music.play().catch(()=>{});
 
   document.getElementById("screen1").classList.add("hidden");
   document.getElementById("screen2").classList.remove("hidden");
 }
+
+/* 🔑 soporte móvil real */
+btn.addEventListener("touchstart", startExperience, { once:true });
+btn.addEventListener("click", startExperience, { once:true });
 </script>
 
 </body>
